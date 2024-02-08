@@ -51,3 +51,12 @@ using System;
 			 return Math.PI * _radius * _radius;
 		}
 	}
+
+	class Calculate{
+		static void Main(string [] args){
+			Triangle tri = new Triangle(3,4);
+			tri.Display();
+			Circle cir = new Circle(12);
+			cir.Display();
+		}
+	}

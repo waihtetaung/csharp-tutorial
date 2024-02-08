@@ -14,7 +14,7 @@ public class DClass : BClass{
 		get{return name;}
 		set{
 			if(!string.IsNullOrEmpty(value)){
-				name = value
+				name = value;
 			}else{
 				name = "No Value";
 			}
@@ -30,5 +30,7 @@ class Program{
 	static void Main(string [] args){
 		DClass d = new DClass();
 		d.GetInfo();
+		BClass b = new BClass();
+		b.GetInfo();
 	}
 }
