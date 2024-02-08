@@ -1,62 +1,52 @@
 using System;
 
 	public abstract class Shape{
-		public abstract double getArea();
+		public abstract double GetArea();
 
 		public void Display(){
-			Console.WriteLine($"Area: {getArea()}");
+			Console.WriteLine($"Area: {GetArea()}");
 		}
 	}
 
 	public class Triangle : Shape{
-		private double Base;
-		private double Heigh;
+		private double _baseValue;
+		private double _heightValue;
 
-		public Triangle(double Base, double Heigh){
-			this.Base = Base;
-			this.Heigh = Heigh;
+		public Triangle(double baseValue, double heightValue){
+			this._baseValue = baseValue;
+			this._heightValue = heightValue;
 		}
 
-		public double base
+		public double Base
 			{
-				get{return Base;}
-				set{Base = value;}
+				get{return _baseValue;}
+				set{_baseValue = value;}
 			}
 
-		public double eigh
+		public double Height
 			{
-				get{return Heigh;}
-				set{Heigh = value;}
+				get{return _heightValue;}
+				set{_heightValue = value;}
 			}
 		
-		public override double getArea(){
-			return 0.5 * Base * Heigh;
+		public override double GetArea(){
+			return 0.5 * _baseValue * _heightValue;
 		}
 	}
 
 	public class Circle : Shape{
-		private double Radius;
+		private double _radius;
 
 		public Circle(double Radius){
-			this.Radius = Radius;
+			this._radius = Radius;
 		}
 
-		public double radius{
-				get{return Radius;}
-				set{Radius = value;}
+		public double Radius{
+				get{return _radius;}
+				set{_radius = value;}
 		}
 
-		public override double getArea(){
-			 return Math.PI * Radius * Radius;
-		}
-	}
-
-	class Program{
-		static void Main(string [] args){
-			Triangle triangle = new Triangle(5,10);
-			Circle circle = new Circle(12);
-
-			triangle.Display();
-			circle.Display();
+		public override double GetArea(){
+			 return Math.PI * _radius * _radius;
 		}
 	}
